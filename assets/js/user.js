@@ -15,15 +15,12 @@ document.getElementById('analyze-button').addEventListener('click', () => {
             console.log(response);
 
             document.getElementById('result-body').innerHTML = `
-                <div class="card bg-primary mb-5">
+                <div class="card bg-primary text-white mb-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
                             Results
                         </h4>
-                        <p>Sentiment Score: ${response.AverageSentimentScore}</p>
-                        <p>Magnitude Score: ${response.AverageMagnitudeScore}</p>
-                        <br>
-                        <p>Overall Feeling: 😂</p>
+                        <h1>😂</h1>
                     </div>
                 </div>
             `;
