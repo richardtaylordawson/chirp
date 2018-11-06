@@ -20,7 +20,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
                         <h4 class="card-title text-center">
                             Results
                         </h4>
-                        <h1 class="text-center">${emoji}</h1>
+                        <h1 class="text-center">😂</h1>
                     </div>
                 </div>
             `;
