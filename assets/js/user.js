@@ -13,6 +13,18 @@ document.getElementById('analyze-button').addEventListener('click', () => {
         dataType: 'json',
         success: (response) => {
             console.log(response);
+
+            document.getElementById('result-body').innerHTML = `
+                <div class="card border-info mb-5">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">
+                            Sentiment Analysis
+                        </h4>
+                        ${response.AverageSentimentScore}
+                        ${response.AverageMagnitudeScore}
+                    </div>
+                </div>
+            `;
         },
         error: () => {
             console.log('error!');
