@@ -26,14 +26,17 @@ $totalTweets = count($tweets -> statuses);
 if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
+    echo "got here";
+    
     foreach($tweets -> statuses as $tweet) {
         $annotation = $language -> analyzeSentiment($tweet -> text);
-        echo $annotation;
         $sentiment = $annotation -> sentiment();
 
         $totalSentimentScore += $sentiment['score'];
         $totalMagnitudeScore += $sentiment['magnitude'];
     }
+
+    echo "got here";
 
     $returnArray['status'] = 'Tweets Found';
     $returnArray['TotalTweets'] = $totalTweets;
