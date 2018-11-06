@@ -24,7 +24,7 @@ function getAnalysis(sentiment, keyword) {
     } else if(sentiment > -0.040 && sentiment <= -0.020) {
         return `People don't really like ${keyword} 😕`;
     } else {
-        return `People 🤬'ing ${keyword}`;
+        return `People 🤬'ing hate ${keyword}`;
     }
 }
 
