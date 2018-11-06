@@ -28,7 +28,7 @@ if($totalTweets == 0) {
 } else {
 
     foreach($tweets -> statuses as $tweet) {
-        echo $tweet -> text;
+        echo $tweet -> text.'<br>';
         echo "--------------------------------------------------------------------";
         $annotation = $language -> analyzeSentiment(utf8_encode($tweet -> text));
         $sentiment = $annotation -> sentiment();
