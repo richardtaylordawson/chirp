@@ -15,13 +15,13 @@ if(file === 'index') {
 }
 
 function getAnalysis(sentiment, magnitude) {
-    if(sentiment > 0.40) {
+    if(sentiment > 0.040) {
         return "😃";
-    } else if(sentiment > 0.20 && sentiment <= 0.40) {
+    } else if(sentiment > 0.020 && sentiment <= 0.040) {
         return "🙂";
-    } else if(sentiment > -0.20 && sentiment <= 0.20) {
+    } else if(sentiment > -0.020 && sentiment <= 0.020) {
         return "😐";
-    } else if(sentiment > -0.40 && sentiment <= -0.20) {
+    } else if(sentiment > -0.040 && sentiment <= -0.020) {
         return "😕";
     } else {
         return "😢";
