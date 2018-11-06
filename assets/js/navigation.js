@@ -8,8 +8,6 @@ if(file === 'index') {
     document.getElementById('user-battle-nav').classList.add('active');
 } else if(file === 'keywordbattle') {
     document.getElementById('keyword-battle-nav').classList.add('active');
-} else if(file === 'user') {
-    document.getElementById('user-nav').classList.add('active');
 } else if(file === 'keyword') {
     document.getElementById('keyword-nav').classList.add('active');
 }
