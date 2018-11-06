@@ -125,6 +125,10 @@ fight.addEventListener('click', () => {
                 },
                 error: () => {
                     console.log('error1');
+                },
+                complete: () => {
+                    button.textContent = 'Fight!';
+                    button.disabled = false;
                 }
             })
         },

@@ -46,7 +46,7 @@ document.getElementById('fight-button').addEventListener('click', () => {
                     console.log('error!');
                 },
                 complete: () => {
-                    button.textContent = 'Fight';
+                    button.textContent = 'Fight!';
                     button.disabled = false;
                 }
             });
