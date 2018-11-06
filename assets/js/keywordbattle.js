@@ -1,8 +1,8 @@
 document.getElementById('fight-button').addEventListener('click', () => {
-    const button = document.getElementById('analyze-button');
+    const button = document.getElementById('fight-button');
 
     button.disabled = true;
-    button.textContent = 'Analyzing...';
+    button.textContent = 'Brawling...';
 
     $.ajax({
         url: '/twitterai/chirp.php',
@@ -34,7 +34,7 @@ document.getElementById('fight-button').addEventListener('click', () => {
                     console.log('error!');
                 },
                 complete: () => {
-                    button.textContent = 'Analyze';
+                    button.textContent = 'Fight';
                     button.disabled = false;
                 }
             });
