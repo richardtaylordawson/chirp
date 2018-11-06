@@ -14,7 +14,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
         success: (response) => {
             console.log(response);
 
-            let emoji = getAnalysis(response.AverageSentimentScore);
+            let emoji = getAnalysis(response.AverageSentimentScore, document.getElementById('searchUserOneInput').value);
 
             document.getElementById('result-body').innerHTML = `
                 <div class="card bg-success text-white mb-5">

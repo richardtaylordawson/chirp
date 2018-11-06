@@ -18,12 +18,12 @@ function getAnalysis(sentiment, keyword) {
     if(sentiment > 0.040) {
         return `People ❤️ ${keyword}`;
     } else if(sentiment > 0.020 && sentiment <= 0.040) {
-        return `🙂`;
+        return `People like ${keyword} 🙂`;
     } else if(sentiment > -0.020 && sentiment <= 0.020) {
-        return `😐`;
+        return `People are indifferent towards ${keyword} 😐`;
     } else if(sentiment > -0.040 && sentiment <= -0.020) {
-        return `😕`;
+        return `People don't really like ${keyword} 😕`;
     } else {
-        return `😢`;
+        return `People 🤬 ${keyword}`;
     }
 }
