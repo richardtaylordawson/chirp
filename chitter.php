@@ -32,10 +32,10 @@ if($totalTweets == 0) {
 
     $returnArray['status'] = 'Tweets Found';
     $returnArray['TotalTweets'] = $totalTweets;
-    $returnArray['TotalSentimentScore'] = $totalSentimentScore;
-    $returnArray['AverageSentimentScore'] = $totalSentimentScore / $totalTweets;
-    $returnArray['TotalMagnitudeScore'] = $totalMagnitudeScore;
-    $returnArray['AverageMagnitudeScore'] = $totalMagnitudeScore / $totalTweets;
+    $returnArray['TotalSentimentScore'] = round($totalSentimentScore, 3);
+    $returnArray['AverageSentimentScore'] = round($totalSentimentScore / $totalTweets, 3);
+    $returnArray['TotalMagnitudeScore'] = round($totalMagnitudeScore, 3);
+    $returnArray['AverageMagnitudeScore'] = round($totalMagnitudeScore / $totalTweets, 3);
 }
 
 echo json_encode($returnArray);
