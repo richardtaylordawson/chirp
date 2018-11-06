@@ -1,4 +1,4 @@
-document.getElementById('analyze-button').addEventListener('click', () => {
+document.getElementById('fight-button').addEventListener('click', () => {
     const button = document.getElementById('analyze-button');
 
     button.disabled = true;
@@ -11,26 +11,36 @@ document.getElementById('analyze-button').addEventListener('click', () => {
             query: document.getElementById('searchUserOneInput').value
         },
         dataType: 'json',
-        success: (response) => {
-            console.log(response);
+        success: (responseOne) => {
+            $.ajax({
+                url: '/twitterai/chirp.php',
+                type: 'post',
+                data: {
+                    query: document.getElementById('searchUserTwoInput').value
+                },
+                dataType: 'json',
+                success: (responseTwo) => {
+                    let winner = '';
 
-            document.getElementById('result-body').innerHTML = `
-                <div class="card bg-info text-white mb-5">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">
-                            Results
-                        </h4>
-                        <h1 class="text-center">${emoji}</h1>
-                    </div>
-                </div>
-            `;
+                    if(responseOne.AverageSentimentScore > responseTwo.AverageSentimentScore) {
+                        winner = `${document.getElementById('searchUserOneInput').value} is the winner!`;
+                    } else {
+                        winner = `${document.getElementById('searchUserTwoInput').value} is the winner!`;
+                    }
+
+                    document.getElementById('result-body').innerHTML = winner;
+                },
+                error: () => {
+                    console.log('error!');
+                },
+                complete: () => {
+                    button.textContent = 'Analyze';
+                    button.disabled = false;
+                }
+            });
         },
         error: () => {
             console.log('error!');
-        },
-        complete: () => {
-            button.textContent = 'Analyze';
-            button.disabled = false;
         }
     });
 });

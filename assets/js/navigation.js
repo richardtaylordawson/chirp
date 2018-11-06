@@ -13,31 +13,3 @@ if(file === 'index') {
 } else if(file === 'keyword') {
     document.getElementById('keyword-nav').classList.add('active');
 }
-
-function getAnalysis(sentiment, keyword) {
-    if(sentiment > 0.040) {
-        return `People ❤️ ${keyword}`;
-    } else if(sentiment > 0.020 && sentiment <= 0.040) {
-        return `People like ${keyword} 🙂`;
-    } else if(sentiment > -0.020 && sentiment <= 0.020) {
-        return `People are indifferent towards ${keyword} 😐`;
-    } else if(sentiment > -0.040 && sentiment <= -0.020) {
-        return `People don't really like ${keyword} 😕`;
-    } else {
-        return `People 🤬'ing hate ${keyword}`;
-    }
-}
-
-function getAnalysisBackground(sentiment) {
-    if(sentiment > 0.040) {
-        return 'success';
-    } else if(sentiment > 0.020 && sentiment <= 0.040) {
-        return 'success';
-    } else if(sentiment > -0.020 && sentiment <= 0.020) {
-        return 'default';
-    } else if(sentiment > -0.040 && sentiment <= -0.020) {
-        return 'danger';
-    } else {
-        return 'danger';
-    }
-}
