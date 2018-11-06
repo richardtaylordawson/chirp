@@ -12,6 +12,7 @@ $returnArray = array();
 
 foreach($users as $user) {
     $tempArray = array(
+        "Name" => $user -> name,
         "ScreenName" => $user -> screen_name,
         "ImageURL" => $user -> profile_image_url_https
     );
