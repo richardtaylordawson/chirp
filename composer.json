@@ -1,6 +1,7 @@
 {
     "require": {
         "abraham/twitteroauth": "^0.9.2",
-        "semantic/ui": "^2.4"
+        "semantic/ui": "^2.4",
+        "google/cloud": "^0.85.0"
     }
 }

@@ -4,7 +4,7 @@ require "vendor/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-echo "Taylor got here";
-
-$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token, $access_token_secret);
-$content = $connection->get("account/verify_credentials");
+$connection = new TwitterOAuth('NCRsbohuk10DznHImq8UY9OOK', '6lDZEYjQtntV3XX65iqfk5WUk6HLOurPi88Ebt6lFwPDyjKWwk', '1059833903286910977-O0YedZohxiLVH2RpfP1qH6cGoFxKYm', 'LbDDM3WkXtD7buL2BFPGDW8f20zWAvBQhqzi7NAkv4XZb');
+$content = $connection -> get("account/verify_credentials");
+$statuses = $connection -> get("search/tweets", ["q" => "from:realDonaldTrump"]);
+echo json_encode($statuses);
