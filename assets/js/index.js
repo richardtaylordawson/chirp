@@ -85,15 +85,18 @@ fight.addEventListener('click', () => {
             url: 'chirp.php',
             type: 'post',
             dataType: 'json',
+            async: false,
             data: {
                 query: user
             },
             success: (response) => {
-                console.log(response);
+                results[user] = response;
             },
             error: () => {
                 console.log('error!');
             }
         });
     });
+
+
 });
