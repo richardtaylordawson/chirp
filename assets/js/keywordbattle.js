@@ -22,13 +22,25 @@ document.getElementById('fight-button').addEventListener('click', () => {
                 success: (responseTwo) => {
                     let winner = '';
 
+                    console.log(responseOne);
+                    console.log(responseTwo);
+
                     if(responseOne.AverageSentimentScore > responseTwo.AverageSentimentScore) {
                         winner = `${document.getElementById('searchUserOneInput').value} is the winner!`;
                     } else {
                         winner = `${document.getElementById('searchUserTwoInput').value} is the winner!`;
                     }
 
-                    document.getElementById('result-body').innerHTML = winner;
+                    document.getElementById('result-body').innerHTML = `
+                        <div class="card bg-success text-white mb-5">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">
+                                    Results
+                                </h4>
+                                <h1 class="text-center">${winner}</h1>
+                            </div>
+                        </div>
+                    `;
                 },
                 error: () => {
                     console.log('error!');

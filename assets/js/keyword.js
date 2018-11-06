@@ -30,7 +30,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
     const button = document.getElementById('analyze-button');
 
     button.disabled = true;
-    button.textContent = 'Brawling...';
+    button.textContent = 'Analyzing...';
 
     $.ajax({
         url: '/twitterai/chirp.php',
@@ -41,6 +41,10 @@ document.getElementById('analyze-button').addEventListener('click', () => {
         dataType: 'json',
         success: (response) => {
             console.log(response);
+
+            let emoji = getAnalysis(response.AverageSentimentScore, document.getElementById('searchUserOneInput').value);
+
+            let background = getAnalysisBackground(response.AverageSentimentScore);
 
             document.getElementById('result-body').innerHTML = `
                 <div class="card bg-${background} text-white mb-5">
@@ -57,7 +61,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
             console.log('error!');
         },
         complete: () => {
-            button.textContent = 'Fight';
+            button.textContent = 'Analyze';
             button.disabled = false;
         }
     });
