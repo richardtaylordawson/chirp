@@ -15,7 +15,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
             console.log(response);
 
             document.getElementById('result-body').innerHTML = `
-                <div class="card border-info mb-5">
+                <div class="card bg-primary mb-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
                             Results
