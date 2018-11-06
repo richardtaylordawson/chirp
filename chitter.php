@@ -5,6 +5,10 @@ require "vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Google\Cloud\Language\LanguageClient;
 
+function three_decimal_places($number) {
+    return number_format((float)$number, 3, '.', '');
+}
+
 $language = new LanguageClient([
     'projectId' => 'calldrip-dev',
     'keyFilePath' => '/opt/lampp/htdocs/googleservicedev.json'
@@ -19,10 +23,6 @@ $totalMagnitudeScore = 0;
 $returnArray = array();
 $totalTweets = count($tweets -> statuses);
 
-function twoDecimals($number) {
-    return number_format((float)$number, 2, '.', '');
-}
-
 if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
@@ -36,10 +36,10 @@ if($totalTweets == 0) {
 
     $returnArray['status'] = 'Tweets Found';
     $returnArray['TotalTweets'] = $totalTweets;
-    $returnArray['TotalSentimentScore'] = twoDecimals($totalSentimentScore);
-    $returnArray['AverageSentimentScore'] = twoDecimals($totalSentimentScore / $totalTweets);
-    $returnArray['TotalMagnitudeScore'] = twoDecimals($totalMagnitudeScore);
-    $returnArray['AverageMagnitudeScore'] = twoDecimals($totalMagnitudeScore / $totalTweets);
+    $returnArray['TotalSentimentScore'] = three_decimal_places($totalSentimentScore);
+    $returnArray['TotalMagnitudeScore'] = three_decimal_places($totalMagnitudeScore);
+    $returnArray['AverageSentimentScore'] = three_decimal_places($totalSentimentScore / $totalTweets);
+    $returnArray['AverageMagnitudeScore'] = three_decimal_places($totalMagnitudeScore / $totalTweets);
 }
 
 echo json_encode($returnArray);
