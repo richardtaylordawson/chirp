@@ -24,6 +24,20 @@ function getAnalysis(sentiment, keyword) {
     } else if(sentiment > -0.040 && sentiment <= -0.020) {
         return `People don't really like ${keyword} 😕`;
     } else {
-        return `People 🤬 ${keyword}`;
+        return `People 🤬'ing ${keyword}`;
+    }
+}
+
+function getAnalysisBackground(sentiment) {
+    if(sentiment > 0.040) {
+        return 'success';
+    } else if(sentiment > 0.020 && sentiment <= 0.040) {
+        return 'success';
+    } else if(sentiment > -0.020 && sentiment <= 0.020) {
+        return 'default';
+    } else if(sentiment > -0.040 && sentiment <= -0.020) {
+        return 'danger';
+    } else {
+        return 'danger';
     }
 }
