@@ -14,8 +14,10 @@ document.getElementById('analyze-button').addEventListener('click', () => {
         success: (response) => {
             console.log(response);
 
+            let emoji = getAnalysis(response.AverageSentimentScore);
+
             document.getElementById('result-body').innerHTML = `
-                <div class="card bg-info text-white mb-5">
+                <div class="card bg-success text-white mb-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
                             Results
