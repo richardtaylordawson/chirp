@@ -27,6 +27,7 @@ if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
     foreach($tweets -> statuses as $tweet) {
+        echo "tay";
         $annotation = $language -> analyzeSentiment($tweet -> text);
         $sentiment = $annotation -> sentiment();
 
