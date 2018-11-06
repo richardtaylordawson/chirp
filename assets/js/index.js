@@ -80,23 +80,28 @@ fight.addEventListener('click', () => {
     button.disabled = true;
     button.textContent = 'Brawling...';
 
-    users.map((user) => {
-        $.ajax({
-            url: 'chirp.php',
-            type: 'post',
-            dataType: 'json',
-            async: false,
-            data: {
-                query: user
-            },
-            success: (response) => {
-                results[user] = response;
-            },
-            error: () => {
-                console.log('error!');
-            }
+    const fight = new Promise((resolve) => {
+        users.map((user) => {
+            $.ajax({
+                url: 'chirp.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    query: user
+                },
+                success: (response) => {
+                    results[user] = response;
+                },
+                error: () => {
+                    console.log('error!');
+                }
+            });
         });
+
+        resolve('success');
     });
 
-
+    fight.then(() => {
+        console.log(results);
+    });
 });
