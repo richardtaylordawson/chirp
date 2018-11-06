@@ -11,7 +11,7 @@ function searchUsers(user, query) {
     button.textContent = 'Searching...';
 
     $.ajax({
-        url: '../../searchusers.php',
+        url: 'searchusers.php',
         type: 'post',
         data: {
             query: query
@@ -82,18 +82,21 @@ fight.addEventListener('click', () => {
 
     users.map((user) => {
         $.ajax({
-            url: '../../chirp.php',
+            url: 'chirp.php',
             type: 'post',
             dataType: 'json',
+            async: false,
             data: {
                 query: user
             },
             success: (response) => {
-                console.log(response);
+                results[user] = response;
             },
             error: () => {
                 console.log('error!');
             }
         });
     });
+
+
 });
