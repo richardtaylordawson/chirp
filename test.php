@@ -1,7 +1,5 @@
 <?php
 
-//$google_auth_file = "googleservicedev.json";
-
 # Includes the autoloader for libraries installed with composer
 require __DIR__ . '/vendor/autoload.php';
 
