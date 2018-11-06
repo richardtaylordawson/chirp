@@ -29,6 +29,7 @@ if($totalTweets == 0) {
 
     foreach($tweets -> statuses as $tweet) {
         echo $tweet -> text;
+        echo "--------------------------------------------------------------------";
         $annotation = $language -> analyzeSentiment(utf8_encode($tweet -> text));
         $sentiment = $annotation -> sentiment();
         echo $sentiment['score'];
