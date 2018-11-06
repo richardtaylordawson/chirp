@@ -5,7 +5,7 @@ document.getElementById('analyze-button').addEventListener('click', () => {
     button.textContent = 'Analyzing...';
 
     $.ajax({
-        url: '../../chirp.php',
+        url: '/twitterai/chirp.php',
         type: 'post',
         data: {
             query: document.getElementById('searchUserOneInput').value
