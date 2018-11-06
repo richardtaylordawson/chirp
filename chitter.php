@@ -28,11 +28,7 @@ if($totalTweets == 0) {
 } else {
 
     foreach($tweets -> statuses as $tweet) {
-        if(mb_detect_encoding($tweet -> text, 'UTF-8')) {
-            echo "true";
-        } else {
-            echo "false";
-        }
+        echo $tweet -> text;
         $annotation = $language -> analyzeSentiment(utf8_encode($tweet -> text));
         $sentiment = $annotation -> sentiment();
 
