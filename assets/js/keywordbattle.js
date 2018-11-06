@@ -22,6 +22,9 @@ document.getElementById('fight-button').addEventListener('click', () => {
                 success: (responseTwo) => {
                     let winner = '';
 
+                    console.log(responseOne);
+                    console.log(responseTwo);
+
                     if(responseOne.AverageSentimentScore > responseTwo.AverageSentimentScore) {
                         winner = `${document.getElementById('searchUserOneInput').value} is the winner!`;
                     } else {
