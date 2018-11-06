@@ -34,54 +34,39 @@
                 Battle
             </h1>
         </div>
-        <div class="col-md-8">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
+
+        <div class="col-12">
+            <div class="row" id="searchUserContainer1">
+                <div class="col-md-8">
+                    <input type="text" id="searchUserInput1" class="form-control mb-3" placeholder="Donald Trump">
                 </div>
-                <input type="text" id="searchUserOneInput" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <div class="col-md-4">
+                    <button type="button" id="searchUserButton1" class="btn btn-block btn-primary text-white mb-5">Search</button>
+                </div>
+            </div>
+
+            <div class="row" id="searchUserContainer2">
+                <div class="col-md-8">
+                    <input type="text" id="searchUserInput2" class="form-control mb-3" placeholder="Bernie Sanders">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" id="searchUserButton2" class="btn btn-block btn-primary text-white mb-5">Search</button>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <button type="button" id="searchUserOneButton" class="btn btn-block btn-primary text-white mb-5">Search</button>
-        </div>
-        <div class="col-md-8">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" id="searchUserTwoInput" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <button type="button" id="searchUserTwoButton" class="btn btn-block btn-primary text-white mb-5">Search</button>
-        </div>
+
         <div class="col-12">
             <hr class="mb-5">
         </div>
-        <div class="col-md-5">
-            <div class="card border-info mb-5">
-                <div class="card-body">
-                    <h4 class="card-title text-center">
-                        @user1
-                    </h4>
-                </div>
-            </div>
-        </div>
+        <div class="col-md-5" id="selectedUser1"></div>
         <div class="col-md-2">
-            <span class="btn btn-block btn-secondary">VS</span>
+            <span class="btn btn-block btn-secondary mb-5">VS</span>
         </div>
         <div class="col-md-5">
-            <div class="card border-info mb-5">
-                <div class="card-body">
-                    <h4 class="card-title text-center">
-                        @user2
-                    </h4>
-                </div>
-            </div>
+            <div id="selectedUser2"></div>
         </div>
         <div class="col-12">
-            <button type="button" class="btn btn-block btn-danger text-white">Fight!</button>
+            <button type="button" class="btn btn-block btn-danger text-white" id="fightButton">Fight!</button>
         </div>
     </div>
 </main>
