@@ -10,47 +10,37 @@
 <body>
     <main class="container" role="main">
         <div class="row">
-
-            <div class="card mb-3 profile">
-                <div class="card-body">
-                    <img src="/twitterai/assets/img/teal_chirp.png" class="rounded-circle mb-3" height="50">
-                    <h5 class="card-title">Log in to continue</h5>
-                    <h6 class="text-muted">@${profile.ScreenName}</h6>
-                    <!--Username-->
-                    <div class="form-group">
-                        <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
+            <div class="col-4 offset-4 mt-3">
+                <div class="card mb-3 profile">
+                    <div class="card-body">
+                        <img src="/twitterai/assets/img/teal_chirp.png" height="100">
+                        <h5 class="card-title">Log in to continue</h5>
+                        <!--Username-->
+                        <div class="form-group">
                             <input class="form-control" placeholder="Username" name="username" id="username" maxlength="45" type="text" autofocus>
+
                         </div>
-                    </div>
 
-                    <!--Forgot Password-->
-                    <a href='#' data-toggle="modal" data-target="#passwordModal" id='forgotpass' tabindex="99">Forgot your password?</a>
-
-                    <!--Password-->
-                    <div class="form-group">
-                        <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="fa fa-lock"></i>
-                                                </span>
+                        <!--Password-->
+                        <div class="form-group">
                             <input class="form-control" placeholder="Password" name="password" id="password" type="password" value="">
-                        </div>
-                    </div>
 
-                    <!--Login Button-->
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block" id="login-submit" name="login">Log In</button>
+                        </div>
+
+                        <!--Login Button-->
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary btn-block" id="login-submit" name="login">Log In</button>
+                        </div>
+
+                        <p class="text-center mt-md mb-md" style="font-weight: 400;">&copy; Copyright <?= date('Y') ?>. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
-
-            <p class="text-center  mt-md mb-md" style="font-weight: 400;">&copy; Copyright <?= date('Y') ?>. All Rights Reserved.</p>
         </div>
     </main>
 
     <script src="vendor/components/jquery/jquery.min.js"></script>
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>
