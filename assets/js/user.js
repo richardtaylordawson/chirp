@@ -18,10 +18,12 @@ document.getElementById('analyze-button').addEventListener('click', () => {
                 <div class="card border-info mb-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
-                            Sentiment Analysis
+                            Results
                         </h4>
-                        ${response.AverageSentimentScore}
-                        ${response.AverageMagnitudeScore}
+                        <p>Sentiment Score: ${response.AverageSentimentScore}</p>
+                        <p>Magnitude Score: ${response.AverageMagnitudeScore}</p>
+                        <br>
+                        <p>Overall Feeling: 😂</p>
                     </div>
                 </div>
             `;
