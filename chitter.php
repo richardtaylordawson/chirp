@@ -12,7 +12,7 @@ $language = new LanguageClient([
 
 $connection = new TwitterOAuth('NCRsbohuk10DznHImq8UY9OOK', '6lDZEYjQtntV3XX65iqfk5WUk6HLOurPi88Ebt6lFwPDyjKWwk', '1059833903286910977-O0YedZohxiLVH2RpfP1qH6cGoFxKYm', 'LbDDM3WkXtD7buL2BFPGDW8f20zWAvBQhqzi7NAkv4XZb');
 $content = $connection -> get("account/verify_credentials");
-$tweets = $connection -> get("search/tweets", ["q" => "from:realDonaldTrump"]);
+$tweets = $connection -> get("search/tweets", ["q" => "from:spidamitchell"]);
 
 $totalSentimentScore = 0;
 $totalMagnitudeScore = 0;
@@ -32,5 +32,5 @@ foreach($tweets -> statuses as $tweet) {
 $averageSentimentScore = $totalSentimentScore / $totalTweets;
 $averageMagnitudeScore = $totalMagnitudeScore / $totalTweets;
 
-echo "Average Sentiment Score: ".$averageSentimentScore;
+echo "Average Sentiment Score: ".$averageSentimentScore."<br>";
 echo "Average Magnitude Score: ".$averageMagnitudeScore;
