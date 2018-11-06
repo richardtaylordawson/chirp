@@ -19,6 +19,10 @@ $totalMagnitudeScore = 0;
 $returnArray = array();
 $totalTweets = count($tweets -> statuses);
 
+function twoDecimals($number) {
+    return number_format((float)$number, 2, '.', '');
+}
+
 if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
@@ -32,10 +36,10 @@ if($totalTweets == 0) {
 
     $returnArray['status'] = 'Tweets Found';
     $returnArray['TotalTweets'] = $totalTweets;
-    $returnArray['TotalSentimentScore'] = round($totalSentimentScore, 3);
-    $returnArray['AverageSentimentScore'] = round(($totalSentimentScore / $totalTweets), 3);
-    $returnArray['TotalMagnitudeScore'] = round($totalMagnitudeScore, 3);
-    $returnArray['AverageMagnitudeScore'] = round(($totalMagnitudeScore / $totalTweets), 3);
+    $returnArray['TotalSentimentScore'] = twoDecimals($totalSentimentScore);
+    $returnArray['AverageSentimentScore'] = twoDecimals($totalSentimentScore / $totalTweets);
+    $returnArray['TotalMagnitudeScore'] = twoDecimals($totalMagnitudeScore);
+    $returnArray['AverageMagnitudeScore'] = twoDecimals($totalMagnitudeScore / $totalTweets);
 }
 
 echo json_encode($returnArray);
