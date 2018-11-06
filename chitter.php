@@ -31,7 +31,7 @@ if($totalTweets == 0) {
         echo $tweet -> text;
         $annotation = $language -> analyzeSentiment(utf8_encode($tweet -> text));
         $sentiment = $annotation -> sentiment();
-
+        echo $sentiment['score'];
         $totalSentimentScore += $sentiment['score'];
         $totalMagnitudeScore += $sentiment['magnitude'];
     }
