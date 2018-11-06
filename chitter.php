@@ -16,21 +16,26 @@ $tweets = $connection -> get("search/tweets", ["q" => $_POST['query']]);
 
 $totalSentimentScore = 0;
 $totalMagnitudeScore = 0;
-$averageSentimentScore = 0;
-$averageMagnitudeScore = 0;
+$returnArray = array();
 $totalTweets = count($tweets -> statuses);
 
-foreach($tweets -> statuses as $tweet) {
-    # Detects the sentiment of the text
-    $annotation = $language -> analyzeSentiment($tweet -> text);
-    $sentiment = $annotation -> sentiment();
+if($totalTweets == 0) {
+    $returnArray['status'] = "No Tweets Found";
+} else {
+    foreach($tweets -> statuses as $tweet) {
+        $annotation = $language -> analyzeSentiment($tweet -> text);
+        $sentiment = $annotation -> sentiment();
 
-    $totalSentimentScore += $sentiment['score'];
-    $totalMagnitudeScore += $sentiment['magnitude'];
+        $totalSentimentScore += $sentiment['score'];
+        $totalMagnitudeScore += $sentiment['magnitude'];
+    }
+
+    $returnArray['status'] = 'Tweets Found';
+    $returnArray['TotalTweets'] = $totalTweets;
+    $returnArray['TotalSentimentScore'] = $totalSentimentScore;
+    $returnArray['AverageSentimentScore'] = $totalSentimentScore / $totalTweets;
+    $returnArray['TotalMagnitudeScore'] = $totalMagnitudeScore;
+    $returnArray['AverageMagnitudeScore'] = $totalMagnitudeScore / $totalTweets;
 }
 
-$averageSentimentScore = $totalSentimentScore / $totalTweets;
-$averageMagnitudeScore = $totalMagnitudeScore / $totalTweets;
-
-echo "Average Sentiment Score: ".$averageSentimentScore."<br>";
-echo "Average Magnitude Score: ".$averageMagnitudeScore;
+echo json_encode($returnArray);
