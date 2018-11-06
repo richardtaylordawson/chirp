@@ -15,12 +15,12 @@ document.getElementById('analyze-button').addEventListener('click', () => {
             console.log(response);
 
             document.getElementById('result-body').innerHTML = `
-                <div class="card bg-primary text-white mb-5">
+                <div class="card bg-info text-white mb-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
                             Results
                         </h4>
-                        <h1>😂</h1>
+                        <h1 class="text-center">😂</h1>
                     </div>
                 </div>
             `;
