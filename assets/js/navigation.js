@@ -14,16 +14,16 @@ if(file === 'index') {
     document.getElementById('keyword-nav').classList.add('active');
 }
 
-function getAnalysis(sentiment, magnitude) {
+function getAnalysis(sentiment, keyword) {
     if(sentiment > 0.040) {
-        return "😃";
+        return `People ❤️ ${keyword}`;
     } else if(sentiment > 0.020 && sentiment <= 0.040) {
-        return "🙂";
+        return `🙂`;
     } else if(sentiment > -0.020 && sentiment <= 0.020) {
-        return "😐";
+        return `😐`;
     } else if(sentiment > -0.040 && sentiment <= -0.020) {
-        return "😕";
+        return `😕`;
     } else {
-        return "😢";
+        return `😢`;
     }
 }
