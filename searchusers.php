@@ -8,4 +8,15 @@ $connection = new TwitterOAuth('NCRsbohuk10DznHImq8UY9OOK', '6lDZEYjQtntV3XX65iq
 $content = $connection -> get("account/verify_credentials");
 $users = $connection -> get("users/search", ["q" => $_POST['query'], "count" => 20]);
 
-echo json_encode($users);
+$returnArray = array();
+
+foreach($users as $user) {
+    $tempArray = array(
+        "ScreenName" => $user -> screen_name,
+        "ImageURL" => $user -> profile_image_url_https
+    );
+
+    array_push($returnArray, $tempArray);
+}
+
+echo json_encode($returnArray);
