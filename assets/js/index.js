@@ -90,6 +90,8 @@ fight.addEventListener('click', () => {
         success: (response) => {
             results[0] = response;
 
+            console.log(results[0]);
+
             $.ajax({
                 url: 'chirp.php',
                 type: 'post',
@@ -100,7 +102,26 @@ fight.addEventListener('click', () => {
                 success: (response) => {
                     results[1] = response;
 
-                    if (results[0].AverageSentimentScore)
+                    console.log(results[1]);
+
+                    let winner = '';
+
+                    if (results[0].AverageSentimentScore > results[1].AverageSentimentScore) {
+                        winner = `${users[0]} is the winner!`;
+                    } else {
+                        winner = `${users[1]} is the winner!`;
+                    }
+
+                    document.getElementById('result-body').innerHTML = `
+                        <div class="card bg-success text-white mb-5">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">
+                                    Results
+                                </h4>
+                                <h1 class="text-center">${winner}</h1>
+                            </div>
+                        </div>
+                    `;
                 },
                 error: () => {
                     console.log('error1');
