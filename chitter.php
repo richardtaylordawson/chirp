@@ -33,7 +33,7 @@ if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
     foreach($tweets -> statuses as $tweet) {
-        $translation = $translate->translate($tweet -> text, [
+        $translation = $translate -> translate($tweet -> text, [
             'target' => 'en'
         ]);
 
