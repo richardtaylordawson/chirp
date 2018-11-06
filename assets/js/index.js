@@ -2,7 +2,7 @@ const searchUserOne = document.getElementById('searchUserButton1');
 const searchUserTwo = document.getElementById('searchUserButton2');
 const fight = document.getElementById('fightButton');
 let users = [];
-let results = {};
+let results = [];
 
 function searchUsers(user, query) {
     const button = document.getElementById(`searchUserButton${user}`);
@@ -80,25 +80,35 @@ fight.addEventListener('click', () => {
     button.disabled = true;
     button.textContent = 'Brawling...';
 
-    users.map((user) => {
-        $.ajax({
-            url: 'chirp.php',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                query: user
-            },
-            success: (response) => {
-                results[user] = response;
-                if (Object.keys(results).length > 1) {
+    $.ajax({
+        url: 'chirp.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            query: users[0]
+        },
+        success: (response) => {
+            results[0] = response;
 
+            $.ajax({
+                url: 'chirp.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    query: users[1]
+                },
+                success: (response) => {
+                    results[1] = response;
+
+                    if (results[0].AverageSentimentScore)
+                },
+                error: () => {
+                    console.log('error1');
                 }
-            },
-            error: () => {
-                console.log('error!');
-            }
-        });
+            })
+        },
+        error: () => {
+            console.log('error!');
+        }
     });
-
-
 });
