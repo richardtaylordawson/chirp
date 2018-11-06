@@ -4,12 +4,18 @@ require "vendor/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Google\Cloud\Language\LanguageClient;
+use Google\Cloud\Translate\TranslateClient;
 
 function three_decimal_places($number) {
     return number_format((float)$number, 3, '.', '');
 }
 
 $language = new LanguageClient([
+    'projectId' => 'calldrip-dev',
+    'keyFilePath' => '/opt/lampp/htdocs/googleservicedev.json'
+]);
+
+$translate = new TranslateClient([
     'projectId' => 'calldrip-dev',
     'keyFilePath' => '/opt/lampp/htdocs/googleservicedev.json'
 ]);
@@ -26,14 +32,13 @@ $totalTweets = count($tweets -> statuses);
 if($totalTweets == 0) {
     $returnArray['status'] = "No Tweets Found";
 } else {
-
     foreach($tweets -> statuses as $tweet) {
-        echo $tweet -> text.'<br>';
-        echo "--------------------------------------------------------------------";
-        $annotation = $language -> analyzeSentiment(utf8_encode($tweet -> text));
-        echo "got here";
+        $translation = $translate->translate($tweet -> text, [
+            'target' => 'en'
+        ]);
+
+        $annotation = $language -> analyzeSentiment($translation['text']);
         $sentiment = $annotation -> sentiment();
-        echo $sentiment['score'].'<br>';
         $totalSentimentScore += $sentiment['score'];
         $totalMagnitudeScore += $sentiment['magnitude'];
     }
