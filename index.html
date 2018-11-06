@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Twitter AI</title>
+
+    <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary navbar-expand">
+    <a class="navbar-brand" href="#">Twitter AI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Battle <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Keyword</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">User</a>
+        </li>
+    </ul>
+</nav>
+
+<main class="container" role="main">
+    <div class="row">
+        <div class="col-12 py-3">
+            <h1 class="display-4">
+                Battle
+            </h1>
+        </div>
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" id="searchUserOneInput" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" id="searchUserOneButton" class="btn btn-block btn-primary text-white mb-5">Search</button>
+        </div>
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" id="searchUserTwoInput" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" id="searchUserTwoButton" class="btn btn-block btn-primary text-white mb-5">Search</button>
+        </div>
+        <div class="col-12">
+            <hr class="mb-5">
+        </div>
+        <div class="col-md-5">
+            <div class="card border-info mb-5">
+                <div class="card-body">
+                    <h4 class="card-title text-center">
+                        @user1
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <span class="btn btn-block btn-secondary">VS</span>
+        </div>
+        <div class="col-md-5">
+            <div class="card border-info mb-5">
+                <div class="card-body">
+                    <h4 class="card-title text-center">
+                        @user2
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-block btn-danger text-white">Fight!</button>
+        </div>
+    </div>
+</main>
+
+<script src="vendor/components/jquery/jquery.min.js"></script>
+<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
