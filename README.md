@@ -1,3 +1,3 @@
 # twitterai
 
-Uses Google's sentiment analysis API to read through tweets.
+App that uses the Twitter API and Google Natural Language API to analyze tweets for various applications.
