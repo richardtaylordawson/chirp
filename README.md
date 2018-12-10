@@ -11,7 +11,6 @@
 </p>
 
 ## Creators
-
 <a href="https://github.com/richardtaylordawson/">
    <img src="https://twitter.com/richard_codes/profile_image?size=original" alt="Richard's image" width=72 height=72>
 </a>
@@ -28,12 +27,10 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/carston_h.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=carston_h)
 [![GitHub followers](https://img.shields.io/github/followers/carstonhenderson.svg?label=Follow&style=social)](https://github.com/carstonhenderson/)
 
-
 ## View Project
 Currently unavailable
 
 ## Status
-[![GitHub Release Date](https://img.shields.io/github/release-date/richardtaylordawson/chirp.svg)](https://github.com/richardtaylordawson/chirp/releases)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/richardtaylordawson/chirp.svg)](https://github.com/richardtaylordawson/chirp/commits/master)
 [![GitHub Search Hit Counter](https://img.shields.io/github/search/richardtaylordawson/chirp/goto.svg)](https://github.com/richardtaylordawson/chirp/)
 [![Codacy Grade Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/chirp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/chirp&amp;utm_campaign=Badge_Grade)
