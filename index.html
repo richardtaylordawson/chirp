@@ -1,50 +1,50 @@
-<?php include_once('navigation.html'); ?>
+<?php require_once('navigation.html'); ?>
 
 <main class="container" role="main">
-    <div class="row" id="content">
-        <div class="col-12 py-3">
-            <h1 class="display-4">
-                User Battle
-            </h1>
-        </div>
-
-        <div class="col-12">
-            <div class="row" id="searchUserContainer1">
-                <div class="col-md-8">
-                    <input type="text" id="searchUserInput1" class="form-control mb-3" placeholder="Donald Trump">
-                </div>
-                <div class="col-md-4">
-                    <button type="button" id="searchUserButton1" class="btn btn-block btn-primary text-white mb-5">Search</button>
-                </div>
-            </div>
-
-            <div class="row" id="searchUserContainer2">
-                <div class="col-md-8">
-                    <input type="text" id="searchUserInput2" class="form-control mb-3" placeholder="Bernie Sanders">
-                </div>
-                <div class="col-md-4">
-                    <button type="button" id="searchUserButton2" class="btn btn-block btn-primary text-white mb-5">Search</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12">
-            <hr class="mb-5">
-        </div>
-        <div class="col-md-5" id="selectedUser1"></div>
-        <div class="col-md-2">
-            <span class="btn btn-block btn-secondary mb-5">VS</span>
-        </div>
-        <div class="col-md-5">
-            <div id="selectedUser2"></div>
-        </div>
-        <div class="col-12">
-            <button type="button" class="btn btn-block btn-danger text-white mb-3" id="fightButton">Fight!</button>
-        </div>
-        <div class="col-12" id="result-body">
-
-        </div>
+  <div class="row" id="content">
+    <div class="col-12 py-3">
+      <h1 class="display-4">
+        User Battle
+      </h1>
     </div>
+
+    <div class="col-12">
+      <div class="row" id="searchUserContainer1">
+        <div class="col-md-8">
+          <input type="text" id="searchUserInput1" class="form-control mb-3" placeholder="Donald Trump">
+        </div>
+        <div class="col-md-4">
+          <button type="button" id="searchUserButton1" class="btn btn-block btn-primary text-white mb-5">Search</button>
+        </div>
+      </div>
+
+      <div class="row" id="searchUserContainer2">
+        <div class="col-md-8">
+          <input type="text" id="searchUserInput2" class="form-control mb-3" placeholder="Bernie Sanders">
+        </div>
+        <div class="col-md-4">
+          <button type="button" id="searchUserButton2" class="btn btn-block btn-primary text-white mb-5">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <hr class="mb-5">
+    </div>
+    <div class="col-md-5" id="selectedUser1"></div>
+    <div class="col-md-2">
+      <span class="btn btn-block btn-secondary mb-5">VS</span>
+    </div>
+    <div class="col-md-5">
+      <div id="selectedUser2"></div>
+    </div>
+    <div class="col-12">
+      <button type="button" class="btn btn-block btn-danger text-white mb-3" id="fightButton">Fight!</button>
+    </div>
+    <div class="col-12" id="result-body">
+
+    </div>
+  </div>
 </main>
 
 <script src="vendor/components/jquery/jquery.min.js"></script>
