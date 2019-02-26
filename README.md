@@ -19,6 +19,9 @@
 [![GitHub Top Language](https://img.shields.io/github/languages/top/richardtaylordawson/chirp.svg)](https://github.com/richardtaylordawson/chirp/)
 [![GitHub Language Count](https://img.shields.io/github/languages/count/richardtaylordawson/chirp.svg)](https://github.com/richardtaylordawson/chirp/)
 
+## View Project
+Currently unavailable
+
 ## Creators
 <a href="https://github.com/richardtaylordawson/">
    <img src="https://twitter.com/richard_codes/profile_image?size=original" alt="Richard's image" width=72 height=72>
@@ -27,6 +30,3 @@
 <a href="https://github.com/carstonhenderson">
   <img src="https://twitter.com/carston_h/profile_image?size=original" alt="Richard's image" width=72 height=72>
 </a>
-
-## View Project
-Currently unavailable
