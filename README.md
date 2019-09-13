@@ -7,8 +7,19 @@ Several projects aided in inspiring this project. Notably they are:
 - [Twitter API](https://developer.twitter.com/en/docs.html)
 - [Google's Natural Language API](https://cloud.google.com/natural-language/)
 
+## Things I Learned
+This is a fun project testing the functionality of Google's Natural Language API. It was very interesting to use and implement and using the Twitter API made the project kinda fun by pairing people against each other. I think the biggest thing I've learned is that as far as machine learning has come, I still think tools like Google's are still awhile away before your every day dev can use it for really robust applications without a lot of time put into the project.
+
+## Run Project
+```shell
+$ Coming Soon
+```
+
+## Deployment
+Coming Soon
+
 ## View Project
-Still in development
+Coming Soon
 
 ## Creators
 <a href="https://github.com/richardtaylordawson/">
